@@ -41,6 +41,31 @@ firebase.database().ref('todos/').on("value", snapshot => {
     Object.keys(oTodos).map((key) => {
         const oTodo = oTodos[key];
         console.log(oTodo);
-        $$("#todo_list").prepend(`<div>${oTodo.name}</div>`);
+        let sRow = "";
+        if(oTodo.dateCompleted){
+            sRow += `<div class="row completed">`;
+        }else{
+            sRow += `<div class="row">`;
+        }
+        sRow += `<div class="col-80 name">${oTodo.name}</div>
+                    <div class="col-20 right_justify">
+                        <button id="d${key}" class="delete">x</button>
+                        <button id="u${key}" class="update">&check;</button>
+                    </div>
+                </div>`;
+        $$("#todo_list").prepend(sRow);
     });
+});
+
+$$("#todo_list").on("click", (evt)=>{
+    evt.preventDefault();
+    const sId = evt.target.id;
+    if(sId[0] == 'u'){
+        //update
+        const sDateCompleted = new Date().toISOString();
+        firebase.database().ref(`todos/${sId.substr(1)}/dateCompleted`).set(sDateCompleted);
+    }else{
+        //delete
+        firebase.database().ref(`todos/${sId.substr(1)}`).remove();
+    }
 });

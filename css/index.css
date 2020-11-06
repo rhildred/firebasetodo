@@ -1,1 +1,24 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/framework7/5.7.12/css/framework7.bundle.min.css";
+
+button{
+    width: auto;
+}
+
+.right_justify{
+    text-align: right;
+}
+
+.main_container{
+    width: 90%;
+    margin: 1em auto;
+}
+
+.completed .name{
+    text-decoration: line-through;
+}
+
+@media screen and (min-width:768px){
+    .main_container{
+        width: 60%;
+    }
+}

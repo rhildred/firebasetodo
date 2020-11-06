@@ -19,10 +19,15 @@
                 <h1>Todo App</h1>
             </div>
         </div>
-        <form id="todo_form">
-            <input id="todo_item" /><button type="submit">Add</button>
-        </form>
-        <div id="todo_list"></div>
+        <div class="main_container">
+            <form id="todo_form">
+                <div class="row">
+                    <div class="col-80"><input id="todo_item" /></div>
+                    <div class="col-20 right_justify"><button type="submit">Add</button></div>             
+                </div>
+            </form>
+            <div id="todo_list"></div>
+        </div>
     </div>
     <script src="js/index.js" type="module"></script>
 </body>
