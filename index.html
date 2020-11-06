@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width = device-width, initial-scale = 1, 
+         maximum-scale = 1, minimum-scale = 1, user-scalable = no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>My App</title>
+    <!--link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/framework7/5.7.12/css/framework7.bundle.min.css" / -->
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <div class="page-content view-main">
+        <div class="appbar">
+            <div class="appbar-inner">
+                <!-- ... Appbar content -->
+                <h1>Todo App</h1>
+            </div>
+        </div>
+        <form id="todo_form">
+            <input id="todo_item" /><button type="submit">Add</button>
+        </form>
+        <div id="todo_list"></div>
+    </div>
+    <script src="js/index.js" type="module"></script>
+</body>
