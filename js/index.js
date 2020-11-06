@@ -1,6 +1,8 @@
 import "https://cdnjs.cloudflare.com/ajax/libs/framework7/5.7.12/js/framework7.bundle.min.js";
 import "https://cdnjs.cloudflare.com/ajax/libs/firebase/7.24.0/firebase-app.js";
 import "https://cdnjs.cloudflare.com/ajax/libs/firebase/7.24.0/firebase-database.js"
+// Your web app's Firebase configuration
+import firebaseConfig from "./firebase.js";
 
 //initialize framework 7
 var myApp = new Framework7();
@@ -15,16 +17,6 @@ myApp.view.create('.view-main', {
     dynamicNavbar: true
 });
 
-// Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
-};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
